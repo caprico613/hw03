@@ -38,16 +38,15 @@ for i in range(0, int(sample)):
     tilted[i] = float(line)
 
 fig, ax = plt.subplots(2, 1)
-ax[0].plot(t, x, 'b')
-# hold on
-ax[0].plot(t, y, 'r')
-# hold on
-ax[0].plot(t, z, 'g')
-# hold on
+l1, = ax[0].plot(t, x, 'b', label = 'x')
+l2, = ax[0].plot(t, y, 'r', label = 'y')
+l3, = ax[0].plot(t, z, 'g', label = 'z')
+ax[0].legend(loc = 'best')
 ax[0].set_xlabel('Time')
 ax[0].set_ylabel('Acc Vector')
 ax[1].plot(t, tilted, 'b') # plotting the spectrum
 ax[1].set_xlabel('Time')
 ax[1].set_ylabel('Tilt')
+
 plt.show()
 s.close()
